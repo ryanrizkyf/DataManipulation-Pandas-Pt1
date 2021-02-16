@@ -14,7 +14,7 @@ df = pd.read_csv(
     "sample_tsv.tsv", sep="\t")
 
 # Set multi index df
-df_x = df.set_index(["order_date", "city", "customer_id"])
+df_x = df.set_index(['order_date', 'city', 'customer_id'])
 
 # Untuk melihat multi index yang telah diset dapat dilakukan dengan
 # Index dari df_x
