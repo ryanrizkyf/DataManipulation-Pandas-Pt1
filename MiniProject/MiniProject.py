@@ -38,7 +38,9 @@ df["item_price"] = df["item_price"].apply(
     lambda x: x.split("'")[1]).astype("int64")
 print("    Tipe data:\n", df.dtypes)
 
-# 3. Transform "product_value" supaya bentuknya seragam dengan format "PXXXX", assign ke kolom baru "product_id", dan drop kolom "product_value", jika terdapat nan gantilah dengan "unknown"
+# 3. Transform "product_value" supaya bentuknya seragam dengan format "PXXXX",
+# assign ke kolom baru "product_id", dan drop kolom "product_value",
+# jika terdapat nan gantilah dengan "unknown"
 print("\n[3] TRANSFORM product_value MENJADI product_id")
 # Buat fungsi
 
@@ -79,14 +81,16 @@ print("    Tipe data:\n", df.dtypes)
 
 # 5. Mengatasi data yang hilang di beberapa kolom
 print("\n[5] HANDLING MISSING VALUE")
-# Kolom "city" dan "province" masih memiliki missing value, nilai yang hilang di kedua kolom ini diisi saja dengan "unknown"
+# Kolom "city" dan "province" masih memiliki missing value,
+# nilai yang hilang di kedua kolom ini diisi saja dengan "unknown"
 df[["city", "province"]] = df[["city", "province"]].fillna("unknown")
 # Kolom brand juga masih memiliki missing value, Ganti value NaN menjadi "no_brand"
 df["brand"] = df["brand"].fillna("no_brand")
 # Cek apakah masih terdapat missing value di seluruh kolom
 print("    Info:\n", df.info())
 
-# 6. Membuat kolom baru "city/province" dengan menggabungkan kolom "city" dan kolom "province" dan delete kolom asalnya
+# 6. Membuat kolom baru "city/province" dengan menggabungkan kolom "city"
+# dan kolom "province" dan delete kolom asalnya
 print("\n[6] MEMBUAT KOLOM BARU city/province")
 df["city/province"] = df["city"] + "/" + df["province"]
 # drop kolom "city" dan "province" karena telah digabungkan
@@ -94,7 +98,8 @@ df.drop(["city", "province"], axis=1, inplace=True)
 # Cetak 5 data teratas
 print(df.head())
 
-# 7. Membuat hierarchical index yang terdiri dari kolom "city/province", "order_date", "customer_id", "order_id", "product_id"
+# 7. Membuat hierarchical index yang terdiri dari kolom "city/province",
+# "order_date", "customer_id", "order_id", "product_id"
 print("\n[7] MEMBUAT HIERACHICAL INDEX")
 df = df.set_index(["city/province", "order_date",
                    "customer_id", "order_id", "product_id"])
