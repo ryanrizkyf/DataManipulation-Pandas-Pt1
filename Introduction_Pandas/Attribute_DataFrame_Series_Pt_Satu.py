@@ -9,10 +9,12 @@
 # Attribute .shape digunakan untuk mengetahui berapa baris dan kolom, hasilnya dalam format tuple (baris, kolom).
 
 # 3. Attribute .dtypes
-# Attribute .dtypes digunakan untuk mengetahui tipe data di tiap kolom. Tipe data object: kombinasi untuk berbagai tipe data (number & text, etc).
+# Attribute .dtypes digunakan untuk mengetahui tipe data di tiap kolom.
+# Tipe data object: kombinasi untuk berbagai tipe data (number & text, etc).
 
 # 4. Attribute .astype (nama_tipe_data)
-# Attribute .astype(nama_tipe_data) untuk convert tipe data berdasarkan tipe data seperti: float, int, str, numpy.float, numpy.int ataupun numpy.datetime.
+# Attribute .astype(nama_tipe_data) untuk convert tipe data berdasarkan tipe data seperti:
+# float, int, str, numpy.float, numpy.int ataupun numpy.datetime.
 
 import pandas as pd
 # Series
