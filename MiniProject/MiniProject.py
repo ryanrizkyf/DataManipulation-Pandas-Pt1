@@ -2,7 +2,6 @@
 
 # 1. Baca dataset
 # 2. Tipe data diubah menjadi tipe yang seharusnya
-import math
 # customer_id dari string ke int64,
 # quantity dari string ke int64,
 # item_price dari string ke int64
@@ -19,6 +18,7 @@ import math
 
 # dataset = https://dqlab-dataset.s3-ap-southeast-1.amazonaws.com/retail_raw_test.csv
 
+import math
 import pandas as pd
 
 # 1. Baca dataset
